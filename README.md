@@ -22,31 +22,31 @@
 | 10/01/2012 | 1000.00 |  | 1000.00 |
 
 ```
-As a client, 
+As a client,
 So I can safely store my hard earned money,
 I would like to be able to deposit a sum into my bank account.
 ```
 
 ```
-As a client, 
+As a client,
 So I can spend my hard earned money,
-I would like to be able to deposit a sum into my bank account
+I would like to be able to withdraw a sum from my bank account
 ```
 
 ```
-As a client, 
+As a client,
 So I can see my personal wealth,
 I would like to be able to see the total amount of money I have in my bank account
 ```
 
 ```
-As a client, 
+As a client,
 So I can keep track of my transactions,
 I would like to be able to see a transaction date
 ```
 
 ```
-As a client, 
+As a client,
 So I can see a summary of my account,
 I would like to be able to see my bank statement
 ```
