@@ -20,38 +20,43 @@ describe Account do
   end
 
   describe '#credit' do
-    it 'should increase my balance when I deposit money' do
-      account.credit(100)
-      expect(account.balance).to eq 100
+    it 'shoud throw an error if ' do
+      expect { account.credit(0) }.to raise_error 'You have to credit a positive integer'
     end
 
-    it 'should store the transaction into an array' do
-      account.credit(100)
-      expect(account.transaction_list.empty?).to be false
+    it 'should increase my balance when I deposit money' do
+      account.credit(100.00)
+      expect(account.balance).to eq 100.00
     end
 
     it 'should store the transaction, nicely formated, into an array' do
-      account.credit(100)
-      expect(account.transaction_list).to include(credit: 100, date: Time.now.strftime('%d/%m/%Y'), balance: 100)
+      account.credit(100.00)
+      expect(account.transaction_list).to include(credit: "100.00", date: Time.now.strftime('%d/%m/%Y'), balance: "100.00")
     end
   end
 
   describe '#withdraw' do
+
+    before(:each) do
+      account.credit(100.00)
+    end
+
     it 'shoud throw an error if I try to withdraw more than my balance' do
-      account.credit(100)
-      expect { account.withdraw(150) }.to raise_error 'You do not have enough funds'
+      expect { account.withdraw(150.00) }.to raise_error 'You do not have enough funds'
+    end
+
+    it 'shoud throw an error if I try to withdraw more than my balance' do
+      expect { account.withdraw(0) }.to raise_error 'You can only withdraw a positive integer'
     end
 
     it 'should decrease my balance when I withdraw money' do
-      account.credit(100)
-      account.withdraw(50)
-      expect(account.balance).to eq 50
+      account.withdraw(50.00)
+      expect(account.balance).to eq 50.00
     end
 
     it 'should store the transaction, nicely formated, into an array' do
-      account.credit(100)
-      account.withdraw(50)
-      expect(account.transaction_list).to include(debit: 50, date: Time.now.strftime('%d/%m/%Y'), balance: 50)
+      account.withdraw(50.00)
+      expect(account.transaction_list).to include(debit: "50.00", date: Time.now.strftime('%d/%m/%Y'), balance: "50.00")
     end
   end
 end

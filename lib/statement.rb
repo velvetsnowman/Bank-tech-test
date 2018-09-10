@@ -13,7 +13,7 @@ class Statement
 
   def print_statement
     puts 'Date || Credit || Debit || Balance'
-    @transaction_list.each do |transaction|
+    @transaction_list.reverse_each do |transaction|
       puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]} "
     end
   end
