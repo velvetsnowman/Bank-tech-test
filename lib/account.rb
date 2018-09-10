@@ -1,4 +1,4 @@
-class Transaction
+class Account
 
   attr_reader :balance
 
@@ -12,7 +12,7 @@ class Transaction
   end
 
   def withdraw(withdraw_amount)
-    fail "You do not have enough funds" if withdraw_amount > @balance 
+    fail "You do not have enough funds" if withdraw_amount > @balance
     @withdraw_amount = withdraw_amount ##might not need
     @balance -= withdraw_amount
   end

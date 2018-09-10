@@ -1,8 +1,8 @@
-require 'transaction'
+require 'account'
 
-describe Transaction do
+describe Account do
 
-  let (:account) { Transaction.new }
+  let (:account) { Account.new }
 
   it { is_expected.to respond_to(:credit).with(1).argument }
   it { is_expected.to respond_to(:withdraw).with(1).argument }

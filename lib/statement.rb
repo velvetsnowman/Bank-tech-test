@@ -1,10 +1,10 @@
-require_relative 'transaction'
+require_relative 'account'
 
 class Statement
 
   attr_reader :total
 
-  def initialize(account = Transaction.new)
+  def initialize(account = Account.new)
     @total = account.balance
   end
 

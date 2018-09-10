@@ -1,61 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/danieldenhartog/Documents/Bank-tech-test/spec/statement_spec.rb": [
-        1,
-        1,
-        null,
-        1,
-        2,
-        2,
-        2,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/danieldenhartog/Documents/Bank-tech-test/lib/statement.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/danieldenhartog/Documents/Bank-tech-test/lib/transaction.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        8,
-        null,
-        null,
-        1,
-        4,
-        4,
-        null,
-        null,
-        1,
-        2,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/danieldenhartog/Documents/Bank-tech-test/spec/transaction_spec.rb": [
+      "/Users/danieldenhartog/Documents/Bank-tech-test/spec/account_spec.rb": [
         1,
         null,
         1,
@@ -91,8 +37,62 @@
         null,
         null,
         null
+      ],
+      "/Users/danieldenhartog/Documents/Bank-tech-test/lib/account.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/danieldenhartog/Documents/Bank-tech-test/spec/statement_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/danieldenhartog/Documents/Bank-tech-test/lib/statement.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1536578490
+    "timestamp": 1536580620
   }
 }
