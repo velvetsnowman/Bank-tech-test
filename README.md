@@ -23,6 +23,12 @@
 
 ```
 As a client,
+So I can own a bank account,
+I would like to be able to create one with an initial balance of 0.
+```
+
+```
+As a client,
 So I can safely store my hard earned money,
 I would like to be able to deposit a sum into my bank account.
 ```

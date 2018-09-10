@@ -6,8 +6,9 @@ class Transaction
     @balance = 0
   end
 
-  def credit_account(amount)
-
+  def credit_account(credit_amount)
+    @credit_amount = credit_amount ##might not need
+    @balance += credit_amount
   end
 
 end
