@@ -11,7 +11,7 @@ describe Account do
   it { is_expected.to respond_to(:credit).with(1).argument   }
   it { is_expected.to respond_to(:withdraw).with(1).argument }
 
-  it 'when a user opens an account, it should be initialized with a balance of 0' do
+  it 'when a user opens an account, it should have a default balance of 0' do
     expect(account.balance).to eq 0
   end
 
@@ -20,7 +20,7 @@ describe Account do
   end
 
   describe '#credit' do
-    it 'shoud throw an error if ' do
+    it 'shoud throw an error if a user tries to credit a negative integer' do
       expect { account.credit(0) }.to raise_error 'You have to credit a positive integer'
     end
 
