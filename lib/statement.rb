@@ -11,7 +11,7 @@ class Statement
   end
 
   def print_statement
-    fail "There are no transactions" if @transaction_list.empty?
+    raise 'There are no transactions' if @transaction_list.empty?
     puts 'Date || Credit || Debit || Balance'
     @transaction_list.reverse_each do |transaction|
       puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]} "

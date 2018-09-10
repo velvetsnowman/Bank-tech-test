@@ -16,7 +16,7 @@ describe Statement do
 
   it 'should show the list of transactions when instantiated' do
     account.credit(100.00)
-    expect(statement.transaction_list).to include(credit: "100.00", date: Time.now.strftime('%d/%m/%Y'), balance: "100.00")
+    expect(statement.transaction_list).to include(credit: '100.00', date: Time.now.strftime('%d/%m/%Y'), balance: '100.00')
   end
 
   specify do

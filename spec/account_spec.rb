@@ -31,12 +31,11 @@ describe Account do
 
     it 'should store the transaction, nicely formated, into an array' do
       account.credit(100.00)
-      expect(account.transaction_list).to include(credit: "100.00", date: Time.now.strftime('%d/%m/%Y'), balance: "100.00")
+      expect(account.transaction_list).to include(credit: '100.00', date: Time.now.strftime('%d/%m/%Y'), balance: '100.00')
     end
   end
 
   describe '#withdraw' do
-
     before(:each) do
       account.credit(100.00)
     end
@@ -56,7 +55,7 @@ describe Account do
 
     it 'should store the transaction, nicely formated, into an array' do
       account.withdraw(50.00)
-      expect(account.transaction_list).to include(debit: "50.00", date: Time.now.strftime('%d/%m/%Y'), balance: "50.00")
+      expect(account.transaction_list).to include(debit: '50.00', date: Time.now.strftime('%d/%m/%Y'), balance: '50.00')
     end
   end
 end
