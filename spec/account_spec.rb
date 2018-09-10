@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'account'
 require 'time'
 
 describe Account do
-
   let (:account) { Account.new }
 
   it { is_expected.to respond_to(:balance)                   }
@@ -15,7 +16,7 @@ describe Account do
   end
 
   it 'when a user opens an account, it should have an empty list of transactions' do
-    expect((account.transaction_list).empty?).to be true
+    expect(account.transaction_list.empty?).to be true
   end
 
   describe '#credit' do
@@ -31,16 +32,14 @@ describe Account do
 
     it 'should store the transaction, nicely formated, into an array' do
       account.credit(100)
-      expect(account.transaction_list).to include({Credit: "100", Date: "#{Time.now.strftime("%d/%m/%Y")}"})
+      expect(account.transaction_list).to include(Credit: '100', Date: Time.now.strftime('%d/%m/%Y').to_s)
     end
-
   end
 
   describe '#withdraw' do
-
     it 'shoud throw an error if I try to withdraw more than my balance' do
       account.credit(100)
-      expect {account.withdraw(150)}.to raise_error ("You do not have enough funds")
+      expect { account.withdraw(150) }.to raise_error 'You do not have enough funds'
     end
 
     it 'should decrease my balance when I withdraw money' do
@@ -52,8 +51,7 @@ describe Account do
     it 'should store the transaction, nicely formated, into an array' do
       account.credit(100)
       account.withdraw(50)
-      expect(account.transaction_list).to include({Debit: "50", Date: "#{Time.now.strftime("%d/%m/%Y")}"})
+      expect(account.transaction_list).to include(Debit: '50', Date: Time.now.strftime('%d/%m/%Y').to_s)
     end
   end
-
 end
