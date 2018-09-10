@@ -19,6 +19,12 @@ describe Transaction do
   end
 
   describe '#withdraw' do
+
+    it 'shoud throw an error if I try to withdraw more than my balance' do
+      account.credit(100)
+      expect {account.withdraw(150)}.to raise_error ("You do not have enough funds")
+    end
+
     it 'should decrease my balance when I withdraw money' do
       account.credit(100)
       account.withdraw(50)
