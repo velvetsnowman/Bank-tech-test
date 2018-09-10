@@ -1,3 +1,19 @@
+Start by cloning this repo.
+
+Open your terminal and go to the path of the cloned file
+
+Run "bundle" in your terminal
+
+Afterwards, in your terminal type the following commands:
+
+`irb`
+`require './lib/statement.rb'`
+`my_account = Account.new`
+`my_statement = Statement.new(my_account)`
+`my_account.credit(100)`
+`my_account.withdraw(25)`
+`my_statement.print_statement`
+
 ## Specification
 
 ### Requirements
