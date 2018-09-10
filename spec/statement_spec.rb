@@ -20,7 +20,7 @@ describe Statement do
   end
 
   it 'should show the list of transactions when intantiated' do
-    expect(statement.transaction_list).to include(Credit: 100, Date: Time.now.strftime('%d/%m/%Y'), Balance: 100)
+    expect(statement.transaction_list).to include(credit: 100, date: Time.now.strftime('%d/%m/%Y'), balance: 100)
   end
 
   describe '#print_statement' do

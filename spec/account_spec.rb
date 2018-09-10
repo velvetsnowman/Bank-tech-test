@@ -32,7 +32,7 @@ describe Account do
 
     it 'should store the transaction, nicely formated, into an array' do
       account.credit(100)
-      expect(account.transaction_list).to include(Credit: 100, Date: Time.now.strftime('%d/%m/%Y'), Balance: 100)
+      expect(account.transaction_list).to include(credit: 100, date: Time.now.strftime('%d/%m/%Y'), balance: 100)
     end
   end
 
@@ -51,7 +51,7 @@ describe Account do
     it 'should store the transaction, nicely formated, into an array' do
       account.credit(100)
       account.withdraw(50)
-      expect(account.transaction_list).to include(Debit: 50, Date: Time.now.strftime('%d/%m/%Y'), Balance: 50)
+      expect(account.transaction_list).to include(debit: 50, date: Time.now.strftime('%d/%m/%Y'), balance: 50)
     end
   end
 end
