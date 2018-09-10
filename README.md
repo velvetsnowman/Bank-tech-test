@@ -1,18 +1,28 @@
-Start by cloning this repo.
+## How to interact with my code
 
-Open your terminal and go to the path of the cloned file
+* Fork this repo and clone
+* Navigate to the root directory using your terminal.
 
-Run "bundle" in your terminal
-
-Afterwards, in your terminal type the following commands:
-
-`irb`
-`require './lib/statement.rb'`
-`my_account = Account.new`
-`my_statement = Statement.new(my_account)`
-`my_account.credit(100)`
-`my_account.withdraw(25)`
-`my_statement.print_statement`
+```
+* bundle install
+* irb
+* require './lib/statement.rb'
+* my_account = Account.new
+```
+* This will create an account for you to deposit and withdraw
+```
+* my_statement = Statement.new(my_account)
+```
+* This allows you to create a statement and print it when you wish
+```
+* my_account.credit(100)
+* my_account.withdraw(25)
+* my_statement.print_statement
+```
+* For testing please run
+```
+* rspec
+```
 
 ## Specification
 
