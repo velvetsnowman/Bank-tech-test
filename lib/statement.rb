@@ -11,5 +11,10 @@ class Statement
     @transaction_list = account.transaction_list
   end
 
-  def print_statement; end
+  def print_statement
+    puts 'Date || Credit || Debit || Balance'
+    @transaction_list.each do |transaction|
+      puts "#{transaction[:Date]} || #{transaction[:Credit]} || #{transaction[:Debit]} || #{transaction[:Balance]} "
+    end
+  end
 end
