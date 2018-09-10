@@ -6,9 +6,14 @@ class Transaction
     @balance = 0
   end
 
-  def credit_account(credit_amount)
+  def credit(credit_amount)
     @credit_amount = credit_amount ##might not need
     @balance += credit_amount
+  end
+
+  def withdraw(withdraw_amount)
+    @withdraw_amount = withdraw_amount ##might not need
+    @balance -= withdraw_amount
   end
 
 end
