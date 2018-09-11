@@ -26,8 +26,9 @@ describe Statement do
 
   specify do
     account.deposit(100)
+    allow(Time).to receive(:now).and_return('11/09/2018')
     expect { statement.print_statement }.to output(
-      "Date || Credit || Debit || Balance\n" + "#{Time.now.strftime('%d/%m/%Y')} || 100.00 ||  || 100.00 \n"
+      "Date || Credit || Debit || Balance\n" + "11/09/2018 || 100.00 ||  || 100.00 \n"
                                                    ).to_stdout
   end
 end
