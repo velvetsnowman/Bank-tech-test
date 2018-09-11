@@ -11,13 +11,15 @@
 ```
 * This will create an account for you to deposit and withdraw
 ```
-* my_statement = Statement.new(my_account)
-```
-* This allows you to create a statement and print it when you wish
-```
 * my_account.credit(100)
 * my_account.withdraw(25)
-* my_statement.print_statement
+* my_account.print_statement
+```
+* You should see something like this:
+```
+date || credit || debit || balance
+11/09/2018 || || 25.00 || 75.00
+11/09/2018 || 100.00 || || 100.00
 ```
 * For testing please run
 ```
