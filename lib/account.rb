@@ -10,8 +10,8 @@ class Account
     @transaction_list = []
   end
 
-  def credit(amount)
-    raise 'You have to credit a positive integer' if amount <= 0
+  def deposit(amount)
+    raise 'You have to deposit a positive integer' if amount <= 0
     @balance += amount
     @transaction_list.push(credit: format('%.2f', amount), date: Time.now.strftime('%d/%m/%Y'), balance: format('%.2f', @balance))
   end

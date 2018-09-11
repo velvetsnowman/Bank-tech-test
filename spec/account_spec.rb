@@ -8,7 +8,7 @@ describe Account do
 
   it { is_expected.to respond_to(:balance)                   }
   it { is_expected.to respond_to(:transaction_list)          }
-  it { is_expected.to respond_to(:credit).with(1).argument   }
+  it { is_expected.to respond_to(:deposit).with(1).argument   }
   it { is_expected.to respond_to(:withdraw).with(1).argument }
 
   it 'when a user opens an account, it should have a default balance of 0' do
@@ -19,25 +19,25 @@ describe Account do
     expect(account.transaction_list.empty?).to be true
   end
 
-  describe '#credit' do
-    it 'shoud throw an error if a user tries to credit a negative integer' do
-      expect { account.credit(0) }.to raise_error 'You have to credit a positive integer'
+  describe '#depsit' do
+    it 'shoud throw an error if a user tries to deposit a negative integer' do
+      expect { account.deposit(0) }.to raise_error 'You have to deposit a positive integer'
     end
 
     it 'should increase my balance when I deposit money' do
-      account.credit(100.00)
+      account.deposit(100.00)
       expect(account.balance).to eq 100.00
     end
 
-    it 'should store the transaction, nicely formated, into an array' do
-      account.credit(100.00)
+    it 'should store the transaction into an array' do
+      account.deposit(100.00)
       expect(account.transaction_list).to include(credit: '100.00', date: Time.now.strftime('%d/%m/%Y'), balance: '100.00')
     end
   end
 
   describe '#withdraw' do
     before(:each) do
-      account.credit(100.00)
+      account.deposit(100.00)
     end
 
     it 'shoud throw an error if I try to withdraw more than my balance' do
