@@ -4,22 +4,14 @@ require 'account'
 require 'time'
 
 describe Account do
-  let (:account) { Account.new }
-
-  it { is_expected.to respond_to(:balance)                   }
-  it { is_expected.to respond_to(:transaction_list)          }
-  it { is_expected.to respond_to(:deposit).with(1).argument  }
-  it { is_expected.to respond_to(:withdraw).with(1).argument }
+  let (:account)   { Account.new                }
+  let (:statement) { double :statement_instance }
 
   it 'when a user opens an account, it should have a default balance of 0' do
     expect(account.balance).to eq 0
   end
 
-  it 'when a user opens an account, it should have an empty list of transactions' do
-    expect(account.transaction_list.empty?).to be true
-  end
-
-  describe '#depsit' do
+  describe '#deposit' do
     it 'shoud throw an error if a user tries to deposit a negative integer' do
       expect { account.deposit(0) }.to raise_error 'You have to deposit a positive integer'
     end
@@ -58,6 +50,13 @@ describe Account do
       account.withdraw(0.01)
       allow(Time).to receive(:now).and_return('11/09/2018')
       expect(account.transaction_list).to include(debit: '0.01', date: '11/09/2018', balance: '99.99')
+    end
+  end
+
+  describe '#print_statement' do
+    it 'delegates to the statement object' do
+      expect(account.statement).to receive(:print_statement).with(account.transaction_list)
+      account.print_statement
     end
   end
 end

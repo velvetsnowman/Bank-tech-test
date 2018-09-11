@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
 require 'time'
+
 class Account
   attr_reader :balance,
-              :transaction_list
+              :transaction_list,
+              :statement
 
   def initialize
     @balance = 0
     @transaction_list = []
+    @statement = Statement.new
   end
 
   def deposit(amount)
@@ -21,5 +24,9 @@ class Account
     raise 'You do not have enough funds' if amount > @balance
     @balance -= amount
     @transaction_list.push(debit: format('%.2f', amount), date: Time.now.strftime('%d/%m/%Y'), balance: format('%.2f', @balance))
+  end
+
+  def print_statement
+    @statement.print_statement(@transaction_list)
   end
 end
